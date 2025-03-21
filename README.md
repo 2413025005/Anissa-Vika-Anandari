@@ -28,6 +28,7 @@
 			<br><a href="garis.pdf">Laporan</a>
 			<br><a href="https://youtu.be/ikyS6RBk2xs.com">Video</a>
 		</p>
+
     </section>
 
     <footer style="background: #333; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%;">
