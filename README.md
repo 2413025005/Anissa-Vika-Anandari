@@ -19,13 +19,13 @@
         <h2>Selamat Datang di Beranda</h2>
         <p>Website ini berisi tugas-tugas grafika komputer.</p>
 		<p>Tugas 1: Tokoh Grafika Komputer
-			<br><a href="tokoh.pdf">Hasil</a>
+			<br><a href="tokoh.pdf">Laporan</a>
 			<br><a href="https://youtu.be/sYdIRuUfiQE.com">Video</a>
 		</p>
 
 		<p>Tugas 2: Algoritma Pembentukan Garis
 			<br><a href="garisDDA.html">Hasil</a>
-			<br><a href="codingDDA">Kode</a>
+			<br><a href="garis.pdf">Laporan</a>
 			<br><a href="https://youtu.be/ikyS6RBk2xs.com">Video</a>
 		</p>
     </section>
