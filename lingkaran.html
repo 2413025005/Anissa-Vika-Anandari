@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2413025005_AnissaVikaAnandari</title>
+  <style>
+    canvas {
+      border: 1px solid #000000;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1 align="center">TUGAS MEMBUAT LINGKARAN BRESENHAM DAN MIDPOINT</h1>
+
+  <label>X: <input type="number" id="X" value="150"></label>
+  <label>Y: <input type="number" id="Y" value="150"></label>
+  <label>Radius: <input type="number" id="rad" value="50"></label>
+  <label>Warna: <input type="color" id="warna" value="#ff99cc"></label>
+  <button onclick="buatGambar()">Gambar Lingkaran</button>
+
+  <br/><br/>
+  <canvas id="myCanvas" width="300" height="300"></canvas>
+  <canvas id="midpoint" width="300" height="300"></canvas>
+
+  <script>
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+
+    function titik(x, y, warna) {
+      ctx.fillStyle = warna;
+      ctx.fillRect(x, y, 1, 3);
+    }
+
+    function gambarTitikSimetris(x0, y0, x, y, warna) {
+      titik(x0 + x, y0 + y, warna);
+      titik(x0 - x, y0 + y, warna);
+      titik(x0 + x, y0 - y, warna);
+      titik(x0 - x, y0 - y, warna);
+      titik(x0 + y, y0 + x, warna);
+      titik(x0 - y, y0 + x, warna);
+      titik(x0 + y, y0 - x, warna);
+      titik(x0 - y, y0 - x, warna);
+    }
+
+    function linkBre(x0, y0, r, warna) {
+      var d = 3 - 2 * r;
+      var x = 0, y = r;
+
+      while (x <= y) {
+        gambarTitikSimetris(x0, y0, x, y, warna);
+        if (d <= 0) {
+          d = d + 4 * x + 6;
+        } else {
+          d = d + 4 * (x - y) + 10;
+          y--;
+        }
+        x++;
+      }
+    }
+
+    function buatGambar() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctxmidpoint.clearRect(0, 0, midpoint.width, midpoint.height);
+
+      let x0 = parseInt(document.getElementById("X").value);
+      let y0 = parseInt(document.getElementById("Y").value);
+      let r = parseInt(document.getElementById("rad").value);
+      let warna = document.getElementById("warna").value;
+
+      linkBre(x0, y0, r, warna);
+      drawmidpoint(x0, y0, r);
+    }
+
+    let midpoint = document.getElementById("midpoint");
+    let ctxmidpoint = midpoint.getContext("2d");
+
+    function drawmidpoint(x0, y0, r) {
+      let x = r;
+      let y = 0;
+      let d = r - 1;
+
+      while (x >= y) {
+        ctxmidpoint.fillRect(x0 + x, y0 + y, 1, 1);
+        ctxmidpoint.fillRect(x0 - x, y0 + y, 1, 1);
+        ctxmidpoint.fillRect(x0 + x, y0 - y, 1, 1);
+        ctxmidpoint.fillRect(x0 - x, y0 - y, 1, 1);
+        ctxmidpoint.fillRect(x0 + y, y0 + x, 1, 1);
+        ctxmidpoint.fillRect(x0 - y, y0 + x, 1, 1);
+        ctxmidpoint.fillRect(x0 + y, y0 - x, 1, 1);
+        ctxmidpoint.fillRect(x0 - y, y0 - x, 1, 1);
+
+        if (d >= 2 * y) {
+          d -= 2 * y + 1;
+          y++;
+        } else if (d < 2 * (r - x)) {
+          d += 2 * x - 1;
+          x--;
+        } else {
+          d += 2 * (x - y - 1);
+          x--;
+          y++;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
