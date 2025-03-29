@@ -36,7 +36,7 @@
 
         <div style="background: #f5f5f5; padding: 15px; border-radius: 10px; display: inline-block; text-align: center; width: 90%;">
             <h4>Tugas 3: Algoritma Pembentukan Lingkaran</h4>
-            <img src="lingkaran.png" style="width: 150px; border-radius: 5px; display: block; margin: 0 auto;">
+            <img src="lingkaran.png" style="width: 250px; border-radius: 5px; display: block; margin: 0 auto;">
             <p><a href="lingkaran.html" style="text-decoration: none; background: #ddd; padding: 5px; border-radius: 5px; display: inline-block;">Hasil</a></p>
             <p><a href="lingkaran.pdf" style="text-decoration: none; background: #ddd; padding: 5px; border-radius: 5px; display: inline-block;">Laporan</a></p>
             <p><a href="https://youtu.be/OjhdSKjeJlU" style="text-decoration: none; background: #ddd; padding: 5px; border-radius: 5px; display: inline-block;">Video</a></p>
