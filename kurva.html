@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurva Bezier Cubic - Dua Awan dan Pohon</title>
+  <style>
+    canvas {
+      border: 2px solid #000000;
+    }
+    h1 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>MEMBUAT POHON DAN AWAN</h1>
+  <canvas id="canvas" width="800" height="800"></canvas>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // Fungsi menggambar kurva Bezier
+    function drawBezierCurve(ctx, points, color) {
+      ctx.beginPath();
+      ctx.moveTo(points[0].x, points[0].y);
+      ctx.strokeStyle = color;
+      ctx.fillStyle = color;
+      for (let i = 1; i < points.length - 2; i += 3) {
+        ctx.bezierCurveTo(
+          points[i].x, points[i].y,
+          points[i + 1].x, points[i + 1].y,
+          points[i + 2].x, points[i + 2].y
+        );
+      }
+      ctx.fill();
+      ctx.closePath();
+      ctx.stroke();
+    }
+
+    // Daun 1
+    const Daun1_points = [
+      {x: 280, y: 320}, {x: 190, y: 340}, {x: 200, y: 225},
+      {x: 240, y: 200}, {x: 280, y: 190}, {x: 280, y: 220},
+      {x: 280, y: 205}, {x: 270, y: 200}, {x: 360, y: 120},
+      {x: 380, y: 220}, {x: 510, y: 210}, {x: 410, y: 410},
+      {x: 295, y: 310}, {x: 250, y: 145}, {x: 370, y: 110},
+      {x: 400, y: 180}, {x: 430, y: 180}, {x: 460, y: 250},
+      {x: 380, y: 300}, {x: 340, y: 310}, {x: 290, y: 300},
+      {x: 250, y: 320}, {x: 280, y: 190}, {x: 200, y: 150},
+      {x: 370, y: 160}, {x: 240, y: 90}
+    ];
+    drawBezierCurve(ctx, Daun1_points, "pink");
+
+    // Daun 2
+    const Daun2_points = Daun1_points.map(point => ({
+      x: point.x - 200,
+      y: point.y - 120
+    }));
+    drawBezierCurve(ctx, Daun2_points, "orange");
+
+    // Semak 1
+    const Semak1_points = [
+      {x: 150, y: 410}, {x: 190, y: 320}, {x: 200, y: 430},
+      {x: 210, y: 370}, {x: 240, y: 390}, {x: 255, y: 400},
+      {x: 250, y: 375}, {x: 370, y: 440}, {x: 150, y: 400},
+      {x: 150, y: 410}
+    ];
+    drawBezierCurve(ctx, Semak1_points, "forestgreen");
+
+    // Semak 2
+    const Semak2_points = Semak1_points.map(point => ({
+      x: point.x + 190,
+      y: point.y - 10
+    }));
+    drawBezierCurve(ctx, Semak2_points, "forestgreen");
+
+    // Semak 3
+    const Semak3_points = Semak1_points.map(point => ({
+      x: point.x - 150,
+      y: point.y - 80
+    }));
+    drawBezierCurve(ctx, Semak3_points, "forestgreen");
+
+    // Pohon 1
+    const branchPoints1 = [
+      {x: 310, y: 480}, {x: 310, y: 320}, {x: 310, y: 310},
+      {x: 300, y: 290}, {x: 180, y: 185}, {x: 330, y: 345},
+      {x: 325, y: 245}, {x: 330, y: 360}, {x: 460, y: 190},
+      {x: 350, y: 310}, {x: 350, y: 470}, {x: 350, y: 370},
+      {x: 350, y: 480}
+    ];
+    drawBezierCurve(ctx, branchPoints1, "tan");
+
+    // Pohon 2
+    const branchPoints2 = branchPoints1.map(point => ({
+      x: point.x - 200,
+      y: point.y - 120
+    }));
+    drawBezierCurve(ctx, branchPoints2, "tan");
+
+    // Awan 1
+    const cloud1_points = [
+      {x: 370, y: 100}, {x: 265, y: 100}, {x: 200, y: 105},
+      {x: 268, y: 75}, {x: 250, y: 80}, {x: 300, y: 30},
+      {x: 330, y: 70}, {x: 370, y: 70}, {x: 370, y: 100}
+    ];
+    drawBezierCurve(ctx, cloud1_points, "skyblue");
+
+    // Awan 2
+    const cloud2_points = [
+      {x: 465, y: 150}, {x: 350, y: 145}, {x: 300, y: 155},
+      {x: 368, y: 125}, {x: 350, y: 135}, {x: 385, y: 80},
+      {x: 430, y: 120}, {x: 400, y: 120}, {x: 450, y: 150}
+    ];
+    drawBezierCurve(ctx, cloud2_points, "skyblue");
+
+    // Resize canvas (optional)
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      // (Redraw bisa ditambahkan di sini kalau mau responsif)
+    });
+  </script>
+</body>
+</html>
