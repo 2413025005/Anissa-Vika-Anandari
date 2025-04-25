@@ -206,7 +206,7 @@
       <br>
       <a href="lingkaran.html">Hasil</a>
       <a href="https://drive.google.com/file/d/1_GtyUVohvVCC_1HKTmOtJ0-phX_ipXrJ/view?usp=drive_link">Laporan</a>
-      <a href="https://youtu.be/">Video</a>
+      <a href="https://youtu.be/OjhdSKjeJlU?si=akS_kpzPNL3tvxFd">Video</a>
     </div>
 
     <div class="box">
