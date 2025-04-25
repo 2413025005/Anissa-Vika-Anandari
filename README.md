@@ -171,7 +171,7 @@
     <div class="box" style="margin-top: 25px;">
       <h3>About Me</h3>
       <p>Hello everyone!</p>
-	<p>Saya Anissa Vika Anandari dengan NPM 2413025005, mahasiswi S1 Pendidikan Teknologi Informasi kelas A di Universitas Lampung.</p>
+	<p>Saya Anissa Vika Anandari dengan NPM 2413025005, mahasiswi dari program studi S1 Pendidikan Teknologi Informasi 2024 kelas A di Universitas Lampung.</p>
       <p>Website ini adalah portofolio digital berisi kumpulan tugas mata kuliah <b>Grafika Komputer</b></p>
     </div>
   </section>
