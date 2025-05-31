@@ -222,7 +222,7 @@
     <div class="box">
       <h3>Kuis 1: Persamaan Misteri</h3>
 	<p>"Kurva Berbentuk Hati"</p>
-      <img src="heart.png" alt="Kurva">
+      <img src="heart.png" alt="Kurva hati">
       <br>
       <a href="heart.html">Hasil</a>
       <a href="https://drive.google.com/file/d/1PEg2nlYoYMlqyynkxC7vn1ViSwCJdYZ0/view?usp=drive_link">Laporan</a>
@@ -231,7 +231,7 @@
     <div class="box">
       <h3>Kuis 2: Transformasi</h3>
 	<p>"Matriks Transformasi 2D"</p>
-      <img src="geotran.png" alt="Kurva">
+      <img src="geotran.png" alt="Geogebra">
       <br>
       <a href="https://docs.google.com/spreadsheets/d/1-yundq1EazIuDpzjYt3sV0SwDzDCM4Tes0uQvhrMJXg/edit?usp=sharing">Spreadsheet</a>
       <a href="https://drive.google.com/file/d/1U551QOPHqIAzBckeg3roHGmKz01usnYD/view?usp=sharing">Laporan</a>
@@ -241,7 +241,7 @@
     <div class="box">
       <h3>Kuis 3: Line Clipping Algorithm</h3>
 	<p>"Cohen-Clip"</p>
-      <img src="geoline.png" alt="Kurva">
+      <img src="geoline.png" alt="Geogebra">
       <br>
       <a href="https://docs.google.com/spreadsheets/d/1PseJoHM__GeoV2O8CUCVVn74Yz0zKBrxOoL6sCCaQBM/edit?usp=sharing">Spreadsheet</a>
       <a href="https://drive.google.com/file/d/1I2j_OBD3DXd2tz1R020W_zA63TWyZ13d/view?usp=drive_link">Laporan</a>
@@ -251,7 +251,7 @@
     <div class="box">
       <h3>Kuis 4: Polygon Clipping Algorithm</h3>
 	<p>"-"</p>
-      <img src=".png" alt="Kurva">
+      <img src=".png" alt="#">
       <br>
       <a href="#">Laporan</a>
       <a href="#">Video</a>
