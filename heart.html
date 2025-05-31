@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>KUIS 1 PERSAMAAN MISTERI</title>
+  <style>
+    canvas {
+      border: 1px solid rgb(113, 113, 113);
+    }
+  </style>
+</head>
+<body>
+  <h1 align="center">Persamaan Misteri - Kurva Berbentuk Hati</h1>
+  <canvas id="canvas" width="400" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const xMin = -2;
+    const xMax = 2;
+    const yMin = -2;
+    const yMax = 2;
+    const step = 0.01;
+
+    const xRange = xMax - xMin;
+    const yRange = yMax - yMin;
+
+    const xPixels = canvas.width;
+    const yPixels = canvas.height;
+    const xStep = xRange / xPixels;
+    const yStep = yRange / yPixels;
+
+    function equation(x, y) {
+      return Math.pow(x*x + y*y - 1, 3) - x*x*Math.pow(y, 3);
+    }
+
+    for (let x = xMin; x <= xMax; x += step) {
+      for (let y = yMin; y <= yMax; y += step) {
+        const val = equation(x, y);
+        if (val <= step && val >= -step) {
+          const xPos = (x - xMin) / xStep;
+          const yPos = (yMax - y) / yStep;
+          ctx.fillStyle = "grey";
+          ctx.fillRect(xPos - 1, yPos - 1, 3, 3); // gambarkan titik
+        }
+      }
+    }
+
+    ctx.fillStyle = "pink"; // pewarnaan tambahan
+    for (let x = xMin; x <= xMax; x += step) {
+      for (let y = yMin; y <= yMax; y += step) {
+        const val = equation(x, y);
+        if (val <= step && val >= -step) {
+          const xPos = (x - xMin) / xStep;
+          const yPos = (yMax - y) / yStep;
+          ctx.fillRect(xPos, yPos, 1, 1);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
